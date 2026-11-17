@@ -1,0 +1,9 @@
+check,result,status,notes
+Duplicate route keys (origin + dest),0,Pass,Each route appears once
+"Missing key values (origin, dest)",0,Pass,Every row has both key values
+Missing ABT cells (all columns),25,Documented,"25 cells: 21 from 7 routes to BQN, PSE, SJU, STT not in airports table (name, lat, lon); 4 from EWR to LGA, whose only flight was cancelled; see dictionary notes"
+"Nonpositive flight counts, distances and air times",0,Pass,"No route has a zero or negative flight count, distance, or air time"
+Routes with a negative max_arr_delay,4,Documented,"4 one-flight routes (JFK-BHM, JFK-MEM, JFK-STL, LGA-LEX) whose only flight arrived early; not an error; see max_arr_delay and flight_count notes"
+Missing target values (avg_arr_delay),1,Documented,EWR to LGA has no arrived flight; exclude it from modeling; see avg_arr_delay notes
+ABT columns without a dictionary row,0,Pass,All 11 ABT columns have a dictionary row
+Blank data dictionary cells,0,Pass,"Every description, source, transformation, and notes cell is filled in"
